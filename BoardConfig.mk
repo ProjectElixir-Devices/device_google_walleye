@@ -37,6 +37,12 @@ BOARD_KERNEL_CMDLINE += androidboot.dtbo_idx=3
 #Recovery Density
 TARGET_RECOVERY_DENSITY := mdpi
 
+# Kernel
+TARGET_KERNEL_CONFIG := lineageos_muskie_defconfig
+
+#Build Broken
+BUILD_BROKEN_DUP_RULES := true
+
 # Partitions (listed in the file) to be wiped under recovery.
 TARGET_RECOVERY_WIPE := device/google/walleye/recovery.wipe
 
