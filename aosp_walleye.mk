@@ -39,6 +39,7 @@ IS_PHONE := true
 ELIXIR_BUILD_TYPE := OFFICIAL
 TARGET_BOOT_ANIMATION_RES := 720
 TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_USES_AOSP_RECOVERY := true
 
 # Inherit product specific makefiles
 $(call inherit-product, device/google/walleye/device.mk)
