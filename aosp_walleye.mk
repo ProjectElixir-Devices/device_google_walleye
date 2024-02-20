@@ -21,15 +21,17 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 # Vendor firmware
 $(call inherit-product, vendor/firmware/build/core/config.mk)
 
-# Inherit some common EvolutionX stuff
-$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
+# Inherit some common Elixir stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
-# EvolutionX Specific Flags
+# Elixir Flags
+ELIXIR_BUILD_TYPE := OFFICIAL
 TARGET_BOOT_ANIMATION_RES := 720
 TARGET_SUPPORTS_QUICK_TAP := true
-TARGET_INCLUDE_GRAMOPHONE := false
-TARGET_BUILD_VIMUSIC := true
-TARGET_IS_PIXEL := true
+PRODUCT_USES_FULL_GAPPS := true
+TARGET_USES_AOSP_RECOVERY := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+EXCLUDE_LAWNCHAIR := true
 
 # Inherit device configuration
 $(call inherit-product, device/google/walleye/device.mk)
@@ -47,7 +49,7 @@ PRODUCT_PACKAGES += com.android.vndk.current.on_vendor
 ## Device identifier. This must come after all inclusions
 PRODUCT_MANUFACTURER := Google
 PRODUCT_BRAND := google
-PRODUCT_NAME := evolution_walleye
+PRODUCT_NAME := aosp_walleye
 PRODUCT_DEVICE := walleye
 PRODUCT_MODEL := Pixel 2
 
